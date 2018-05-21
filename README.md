@@ -3,11 +3,13 @@
 
 ***
 
-##痛点
+## 痛点
+
 ![image](https://github.com/SpringCloud/eureka-admin/blob/master/eureka-admin-sample/eureka-admin-sample-eureka-server/img/dynamic-eureka-server.png)
+
 我们往往会部署一个zuul集群来横向扩展我们的微服务应用，集群的上层是Nginx软负载，在实际情况中，往往会遇到zuul宕机的尴尬事情，这时候从Nginx到这台机器的请求就会全部失效。此项目针对此痛点，用lua脚本实现自动发现服务，动态增减Nginx的负载节点。
 
-##OpenResty安装与配置
+## OpenResty安装与配置
 ```
 1、环境
 yum -y install readline-devel pcre-devel openssl-devel gcc
@@ -38,7 +40,7 @@ copy dynamic_eureka_balancer.lua into this dir
 9、Nginx配置文件
 vim /usr/servers/nginx/conf/nginx.conf
 ```
-##Nginx配置
+## Nginx配置
 ```
 
 http {
