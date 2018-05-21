@@ -9,7 +9,7 @@
 
 ![image](https://github.com/SpringCloud/eureka-admin/blob/master/eureka-admin-sample/eureka-admin-sample-eureka-server/img/dynamic-eureka-server.png)
 
-我们往往会部署一个Zuul集群来横向扩展我们的微服务应用，集群的上层是Nginx软负载，在实际情况中，往往会遇到Zuul宕机的尴尬事情，这时候从Nginx到这台机器的请求就会全部失效。此项目针对此痛点，用lua脚本实现自动发现服务，动态增减Zuul在Nginx中的负载节点。
+我们往往会部署一个Zuul集群来横向扩展我们的微服务应用，集群的上层是Nginx软负载，在实际情况中，往往会遇到Zuul宕机的尴尬事情，这时候从Nginx到这台机器的请求就会全部失效。此项目针对此痛点，用lua脚本实现定时拉取特定服务地址，动态无感知增减Zuul在Nginx中的负载节点。
 
 ## OpenResty安装与配置
 ```
