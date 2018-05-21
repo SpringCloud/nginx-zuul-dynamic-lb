@@ -5,11 +5,13 @@
 
 ***
 
-## 痛点
+## 场景痛点
 
 ![image](https://github.com/SpringCloud/eureka-admin/blob/master/eureka-admin-sample/eureka-admin-sample-eureka-server/img/dynamic-eureka-server.png)
 
-我们往往会部署一个Zuul集群来横向扩展我们的微服务应用，集群的上层是Nginx软负载，在实际情况中，往往会遇到Zuul宕机的尴尬事情，这时候从Nginx到这台机器的请求就会全部失效。此项目针对此痛点，用lua脚本实现定时拉取特定服务地址，动态无感知增减Zuul在Nginx中的负载节点。
+在Spring Cloud微服务架构体系中，我们往往会部署一个Zuul集群来横向扩展我们的微服务应用，集群的上层是Nginx软负载，在实际情况中，往往会遇到Zuul宕机的尴尬事情，这时候从Nginx到这台机器的请求就会全部失效。此项目针对此痛点，用lua脚本实现定时拉取特定服务地址，动态无感知增减Zuul在Nginx中的负载节点。
+
+如果您希望实现从Nginx直接到普通服务的动态节点负载，在下文配置服务名与Eureka注册中心地址即可。
 
 ## OpenResty安装与配置
 ```
