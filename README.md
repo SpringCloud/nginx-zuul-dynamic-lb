@@ -1,7 +1,7 @@
 ![image](https://img.shields.io/badge/test-passing-yellowgreen.svg)
 
 # nginx-zuul-dynamic-lb
-:maple_leaf: A lua script for OpenResty, dynamically add zuul nodes
+:maple_leaf: Spring Cloud网关高可用通用Ngnix插件
 
 ***
 
