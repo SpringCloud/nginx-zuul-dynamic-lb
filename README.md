@@ -1,4 +1,4 @@
-![image](https://img.shields.io/badge/test-passing-yellowgreen.svg)
+![image](https://img.shields.io/badge/test-passing-green.svg)
 
 # nginx-zuul-dynamic-lb
 :maple_leaf: 基于Lua的Spring Cloud网关高可用通用Ngnix插件
