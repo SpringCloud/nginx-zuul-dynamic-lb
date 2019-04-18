@@ -59,6 +59,11 @@ http {
 		--eureka server list
 		balancer.set_eureka_service_url({"127.0.0.1:8888", "127.0.0.1:9999"})
 		
+		--eureka basic authentication
+		--use this setting if eureka has enabled basic authentication. 
+		--note: basic authentication must use BASE64 encryption in `user:password` format
+        --balancer.set_eureka_service_basic_authentication("")
+		
 		--The service name that needs to be monitored
 		balancer.watch_service({"zuul", "client"})
 	}
