@@ -57,7 +57,13 @@ end
 -- build eureka request params
 local function build_eureka_params(service_name)
     local uri = "/eureka/apps/" .. service_name
-    local params = {path=uri, method="GET", headers={["Accept"]="application/json"}}
+    local headers = {["Accept"]="application/json"}
+    local eureka_service_basic_authentication = _M.eureka_service_basic_authentication
+    if eureka_service_basic_authentication then
+        local basic_authentication = "Basic " .. eureka_service_basic_authentication
+        headers = {["Accept"]="application/json", ["Authorization"]=basic_authentication}
+    end
+    local params = {path=uri, method="GET", headers=headers}
     return params
 end
 
@@ -303,6 +309,11 @@ function _M.set_eureka_service_url(eureka_service_urls)
         ngx.log(ngx.ERR, "eureka.balancer: require set eureka_service_urls")
         return ngx.exit(ngx.ERROR)
     end
+end
+
+-- set eureka basic authentication info
+function _M.set_eureka_service_basic_authentication(eureka_service_basic_authentication)
+    _M.eureka_service_basic_authentication = eureka_service_basic_authentication
 end
 
 function _M.new(self, opts)
